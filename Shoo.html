@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+	<title>SHOO</title>
+	<!-- 부트스트랩 -->
+    <link href="./bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+ 	body{background-color:#FFEBFF;}
+	img{border:none; vertical-align:top;}
+	#banner_wrap{position:positive; width:470px; margin:10px; auto;}
+	header{height:100px;background-color:none;margin: 30px;padding: 28px;}
+	.btn-default{color:black; font-size:23px;}
+	
+	section {
+        border: 0px solid #999;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    nav, section, aside {
+        float: left;
+        height: 150px;
+    }
+    section {
+        background-color: none;   
+        width: 704px; height: 600px;
+    }
+    nav, aside {       
+        background-color: 0;
+        width: 100px;
+    }
+    #sea {
+    	float: left;
+    }
+        #font{
+    	font-size: 18px;
+    }
+ </style>
+</head>
+<body>
+
+   <!-- 코딩 시작 -->
+<header>
+<div id='1' class="btn-group" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    	멤버
+      <span class="caret"></span>   
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="./Sea.html" style='color:black;font-size:19px;'><strong>S</strong>ea</a></li>
+      <li><a href="./Eugene.html" style='color:black;font-size:19px;'><strong>E</strong>ugene</a></li>
+      <li><a href="./Shoo.html" style='color:black;font-size:19px;'><strong>S</strong>hoo</a></li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./video.html'">동영상</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./board.html'">게시판</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./ticket.html'">티켓팅</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./music.html'">음원 판매</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./chart.html'">음원 순위</button>
+
+
+<!-- 회원가입 -->
+ <a href="./join.html" target='_blank'><input type="submit" class="btn btn-default" value ='회원가입'></a>
+ <!-- 로그인 -->
+ <a href="./login.html" target='_blank'><input type="submit" class="btn btn-default"value ='로그인'></a>
+   <div id="wapper">
+     <!--네비게이션-->
+     <nav></nav>
+     <!--콘텐츠부분-->
+     <section>
+      <p><img id='sea' src="./images/shoo.jpg" alt="사진1" height="300"/></p>
+      <br><strong><p id='font'>1. 소개</p></strong>
+      <p>S.E.S.의 멤버. 한국 국적의 재일교포 출신으로 본명은 유수영. 일본 통명은 쿠니미츠 슈(邦光 洙).
+		1981년 10월 23일, 일본 가나가와현 요코하마시에서 태어나고 유년시절을 보냈다. 대한민국에는 15살 때부터 거주했다고 한다. 
+		국내 최초이자 최정상의 걸그룹의 위치에 있었으며, 육아 예능 열풍으로 인해 모범적인 가정주부의 표본으로 인기와 돈 그리고 대중의 호감까지 얻었으나 후술한 사건인 2018년 걸그룹 도박의 주인공이 되어 이미지가 나락으로 추락했다.</p>
+      <br><strong><p id='font'>2. 활동 내역</p></strong>
+      <p>롯데월드에서 길거리 캐스팅되어 S.E.S.의 멤버로 발탁되었다고 한다. 
+      	당시 슈의 모습에 대해서 놀러와에서 유진이 회상한 바에 따르면, 나이는 고1이었는데 한국에서 외국인학교에 다녔던 관계로 두발제한이나 화장제한 같은 것이 없어서 굉장히 성숙해 보였다고 한다. 
+      	하지만 1집 데뷔 때 SM엔터테인먼트의 사장이었던 이수만이 무조건 어려보여야 한다고 색조가 거의 들어가지 않는(심지어 입술색도 거의 베이지색이다.) 단순한 메이크업을 지시했다고 한다.</p>
+     <br><br><strong><p id='font'>3. 개인 영상</p></strong>
+	 <iframe width="600" height="315" src="https://www.youtube.com/embed/Aa_Spz6kh74" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+     </section>
+     <!--사이드바-->
+     <aside>
+     <p></p>
+     </aside>
+</div>
+</header>
+
+    
+   
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="./bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+	<title>Music</title>
+	<!-- 부트스트랩 -->
+    <link href="./bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+ 
+	body{background-color:#FFEBFF;}
+	img{border:none; vertical-align:top;}
+	header{height:100px;background-color:none;margin: 30px;padding: 28px;}
+	.btn-default{color:black; font-size:23px;}
+	section{background-color:green; width:600px;margin: 20px;padding: 28px;}
+ 
+ </style>
+ 
+ <style>
+  body { color: #666; font-family: sans-serif; }
+  h1 { color: #444; font-size: 1.2em; padding: 14px 2px 12px; margin: 0px; }
+  h1 em { font-style: normal; color: #999; }
+  a { color: #888; text-decoration: none; }
+  #wrapper { width: 400px; margin: 40px auto; }
+  
+  ol { padding: 0px; margin: 0px; list-style: decimal inside; color: #ccc; width: 460px; border-top: 1px solid #ccc; font-size: 0.95em; }
+  ol li { position: relative; margin: 0px; padding: 9px 2px 10px; border-bottom: 1px solid #ccc; cursor: pointer; }
+  ol li a { margin: 0px 0px 0px 5px; }
+  li.playing { color: #aaa; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); }
+  li.playing a { color: #000; }
+  li.playing:before { content: '♬'; width: 14px; height: 14px; padding: 3px; line-height: 14px; margin: 0px; position: absolute; left: -24px; top: 9px; color: #000; font-size: 13px; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); }
+  
+  #shortcuts { position: fixed; bottom: 0px; width: 100%; color: #666; font-size: 0.9em; margin: 60px 0px 0px; padding: 20px 20px 15px; background: #f3f3f3; background: rgba(240, 240, 240, 0.7); }
+  #shortcuts div { width: 460px; margin: 0px auto; }
+  #shortcuts h1 { margin: 0px 0px 6px; }
+  #shortcuts p { margin: 0px 0px 18px; }
+  #shortcuts em { font-style: normal; background: #d3d3d3; padding: 3px 9px; position: relative; left: -3px;
+	-webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px;
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+</style>
+<script src="/data/201012/IJ12925124461064/jquery-1.4.4.min.js"></script>
+<script src="/data/201012/IJ12925124461064/audio.js"></script>
+<script>
+  $(function() { 
+	// Setup the player to autoplay the next track
+	var a = audiojs.createAll({
+	  trackEnded: function() {
+		var next = $('ol li.playing').next();
+		if (!next.length) next = $('ol li').first();
+		next.addClass('playing').siblings().removeClass('playing');
+		audio.load($('a', next).attr('data-src'));
+		audio.play();
+	  }
+	});
+	
+	// Load in the first track
+	var audio = a[0];
+		first = $('ol a').attr('data-src');
+	$('ol li').first().addClass('playing');
+	audio.load(first);
+
+	// Load in a track on click
+	$('ol li').click(function(e) {
+	  e.preventDefault();
+	  $(this).addClass('playing').siblings().removeClass('playing');
+	  audio.load($('a', this).attr('data-src'));
+	  audio.play();
+	});
+	// Keyboard shortcuts
+	$(document).keydown(function(e) {
+	  var unicode = e.charCode ? e.charCode : e.keyCode;
+		 // right arrow
+	  if (unicode == 39) {
+		var next = $('li.playing').next();
+		if (!next.length) next = $('ol li').first();
+		next.click();
+		// back arrow
+	  } else if (unicode == 37) {
+		var prev = $('li.playing').prev();
+		if (!prev.length) prev = $('ol li').last();
+		prev.click();
+		// spacebar
+	  } else if (unicode == 32) {
+		audio.playPause();
+	  }
+	})
+  });
+</script>
+ 
+</head>
+<body>
+   <!-- 코딩 시작 -->
+   <header>
+<div id='1' class="btn-group" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    	멤버
+      <span class="caret"></span>   
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="./Sea.html" style='color:black;font-size:19px;'><strong>S</strong>ea</a></li>
+      <li><a href="./Eugene.html" style='color:black;font-size:19px;'><strong>E</strong>ugene</a></li>
+      <li><a href="./Shoo.html" style='color:black;font-size:19px;'><strong>S</strong>hoo</a></li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./video.html'">동영상</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./board.html'">게시판</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./ticket.html'">티켓팅</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./music.html'">음원 판매</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='./chart.html'">음원 순위</button>
+
+<!-- 회원가입 -->
+ <a href="./join.html" target='_blank'><input type="submit" class="btn btn-default" value ='회원가입'></a>
+ <!-- 로그인 -->
+ <a href="./login.html" target='_blank'><input type="submit" class="btn btn-default" value ='로그인'></a>
+</header>
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="./bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+    
+</div>
+<br/><br/><br/><br/>
+<div>
+	<table style="width=100%">
+	<tr>
+	<td>
+	<img src="./images/albumcover1.jpg" alt="표시할 이미지가 없습니다"></td>
+  <td>
+  <h1>wait what — notorious xx <em>(2009)</em></h1>
+  <audio preload></audio>
+  <ol>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/01-dead-wrong-intro.mp3">dead wrong intro</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3">juicy-r</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/03-its-all-about-the-crystalizabeths.mp3">it's all about the crystalizabeths</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/04-islands-is-the-limit.mp3">islands is the limit</a></li>
+  </ol></td>
+  </tr>
+  </table>
+</div>
+<br/><br/><br/>
+<div>
+	<table style="width=100%">
+	<tr>
+	<td>
+	<img src="./images/albumcover2.jpg"alt="표시할 이미지가 없습니다">
+	<td>
+  <h1>wait what — notorious xx <em>(2009)</em></h1>
+  <audio preload></audio>
+  <ol>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/01-dead-wrong-intro.mp3">dead wrong intro</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3">juicy-r</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/03-its-all-about-the-crystalizabeths.mp3">it's all about the crystalizabeths</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/04-islands-is-the-limit.mp3">islands is the limit</a></li>
+  </ol></td>
+  </tr>
+  </table>
+</div>
+<br/><br/><br/>
+<div>
+	<table style="width=100%">
+	<tr>
+	<td>
+	<img src="./images/albumcover3.jpg"alt="표시할 이미지가 없습니다">
+	<td>
+  <h1>wait what — notorious xx <em>(2009)</em></h1>
+  <audio preload></audio>
+  <ol>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/01-dead-wrong-intro.mp3">dead wrong intro</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3">juicy-r</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/03-its-all-about-the-crystalizabeths.mp3">it's all about the crystalizabeths</a></li>
+	<li><a href="#" data-src="http://s3.amazonaws.com/audiojs/04-islands-is-the-limit.mp3">islands is the limit</a></li>
+  </ol></td>
+  </tr>
+  </table>
+</div>
+<br/><br/><br/>
+<button>구매</button>
+<button>취소</button>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>회원가입</title>
+ 
+<link href="board2.css" rel="stylesheet" type="text/css" />
+
+<style>
+@charset "utf-8";
+/* CSS Document */
+ 
+/*공통*/
+ 
+body{font-size:12px;}
+ 
+/*table {width:800}*/
+table, th, td {border:1px solid #333333; border-collapse:collapse; padding:5px}
+ 
+/*서브타이틀*/
+.signSubTitle {color:#000; background-color:#FFD9FA ; text-align:center; font-weight:700; font-size:12px}
+ 
+/*헤드부 */
+caption{font-size:18px; font-weight:bold; text-decoration:underline; padding:20px;}
+thead, th{ background-color:#FFD9FA ;}
+ 
+/*바디부*/
+.toNo, .tdDate , .tdCount {text-align:center;}
+.inBorder {border:solid 1px #CCCCCC ; }
+ 
+/*버텀부*/
+tfoot { text-align:center; }
+ 
+/*link*/
+ 
+/*tbody*/
+tbody a{ color:#333; }
+ 
+tbody a:link{
+    font-size:12px;
+    font-family:굴림;
+    text-decoration:none;
+ }
+ 
+tbody a:visited{
+    font-size:12px;
+    color:#333;
+    font-family:굴림;
+    text-decoration:none;
+         
+ }
+tbody a:hover{ text-decoration:underline;}
+tbody a:active { font-size:13px; font-family:궁서;}
+ 
+ /*tfoot*/
+ 
+ tfoot a{ color:#06F; }
+ 
+ tfoot a:link{
+    font-size:10pt;
+    font-family:굴림;
+    text-decoration:none;
+ }
+ 
+ tfoot a:visited{
+    font-size:12px;
+    font-family:굴림;
+    text-decoration:none;
+         
+ }
+ tfoot a:hover{ text-decoration:underline;}
+ tfoot a:active { font-size:13px; font-family:궁서;}
+ form{position: absolute; left: 50px;}
+</style>
+
+</head>
+<!-- 이름, 주민등록번호, 아이디, 비밀번호, 비밀번호확인, 생년월일,
+    이메일, 우편번호, 주소, 전화번호, 휴대전화번호, 결혼여부, 직업, 가입경로, -->
+     
+     
+<form>
+<table>
+    <!-- 헤드부 -->
+    <thead>
+        <caption> Member Sign </caption>
+        <colgroup>
+            <col width="120" />
+            <col width="500" />
+        </colgroup>
+    </thead>
+
+    <!-- 바디부 -->
+    <tbody>          
+        <tr>    
+            <td colspan="2" class="signSubTitle">
+                필수입력사항
+            </td>          
+        </tr>
+        <!-- 이름 -->
+        <tr>
+            <th>이름 </th>
+            <td>
+                <input type="text" name="inName" class="inBorder"/>
+             </td>
+        </tr>
+        <!-- 주민등록번호 -->
+         <tr>
+            <th>주민등록번호 </th>
+            <td>
+                <input type="text" name="inJumin1" class="inBorder" />
+                - <input type="password" name="inJumin2" class="inBorder" />
+                <div>※ 256 bit 암호화 값으로 저장 됩니다.^_^</div>
+             </td>
+        </tr>      
+        <!-- 아이디 -->
+        <tr>
+            <th>아이디</th>
+            <td>
+                <input type="text" name="inId" class="inBorder" />
+             </td>
+        </tr>
+        <!-- 비밀번호 -->
+        <tr>
+            <th>비밀번호</th>
+            <td>
+                <input type="password" name="inId" class="inBorder"/>
+             </td>
+        </tr>
+        <!-- 비밀번호확인-->
+         <tr>
+            <th>비밀번호 확인</th>
+            <td>
+                <input type="password" name="inIdr" class="inBorder" />
+             </td>
+        </tr>
+        <!-- 생년월일 -->
+        <tr>
+            <th>생년월일</th>
+            <td>
+                <input type="text" name="inyear" size="5" class="inBorder" />년
+                <select class="inBorder">
+                    <option value="1">1
+                    <option value="2">2
+                    <option value="3">3
+                    <option value="4">4
+                    <option value="5">5
+                    <option value="6">6
+                    <option value="7">7
+                    <option value="8">8
+                    <option value="9">9
+                    <option value="10">10
+                    <option value="11">11
+                    <option value="12">12                            
+                </select> 월
+                <select class="inBorder">
+                    <option value="1">1
+                    <option value="2">2
+                    <option value="3">3
+                    <option value="4">4
+                    <option value="5">5
+                    <option value="6">6
+                    <option value="7">7
+                    <option value="8">8
+                    <option value="9">9
+                    <option value="10">10
+                    <option value="11">11
+                    <option value="12">12  
+                    <option value="13">13
+                    <option value="14">14
+                    <option value="15">15
+                    <option value="16">16
+                    <option value="17">17
+                    <option value="18">18
+                    <option value="19">19
+                    <option value="20">20
+                    <option value="21">21
+                    <option value="22">22
+                    <option value="23">23
+                    <option value="24">24
+                    <option value="25">25
+                    <option value="26">26
+                    <option value="27">27
+                    <option value="28">28
+                    <option value="29">29
+                    <option value="30">30
+                    <option value="31">31
+                </select> 일
+                &nbsp;
+                <input type="radio" name="birtymode" /> 양력
+                <input type="radio" name="birtymode" /> 음력
+             </td>
+        </tr>
+        <!-- 이메일 -->
+        <tr>
+            <th>E-Mail</th>
+            <td>
+                <input type="text" name="inEmail1" class="inBorder" />@
+                <input type="text" name="inEmail2" class="inBorder" />
+                <select class="inBorder">
+                    <option value="0">==직접입력==
+                    <option value="daum.net">daum.net
+                    <option value="naver.com">naver.com
+                    <option value="nate.com">nate.com                              
+                </select>           
+             </td>
+        </tr>
+           <!-- 이메일 수신여부-->
+        <tr>
+            <th>E-Mail 수신여부</th>
+            <td>
+                  <input type="radio" name="emailSend" /> 예
+                  <input type="radio" name="emailSend" /> 아니오              
+            </td>
+        </tr>  
+        <!-- 우편번호-->
+        <tr>
+            <th>우편번호</th>
+            <td>
+                <input type="text" name="inZip1" size="7" class="inBorder"/>-
+                <input type="text" name="inZip2" size="7" class="inBorder"/>
+                <input type="button" value="우편번호찾기" class="inBorder"/>
+             </td>
+        </tr>
+        <!-- 주소 -->
+         <tr>
+            <th>주소</th>
+            <td>
+                <input type="text" size="70" name="inAddr1" class="inBorder"/><br/>
+                <input type="text" size="70" name="inAddr2" class="inBorder"/>
+             </td>
+        </tr>
+        <!-- 전화번호 -->
+        <tr>
+            <th>전화번호</th>
+            <td>
+                <select name="inPhone1" class="inBorder">
+                    <option value="02">02
+                    <option value="061">061
+                    <option value="063">063
+                     <option value="070">070
+                    <option value="추가">추가
+                </select>
+                <input type="text" size="5" name="inPhone2" class="inBorder"/>-
+                <input type="text" size="5" name="inPhone3" class="inBorder"/>
+             </td>
+        </tr> 
+        <!-- 휴대전화번호 -->
+        <tr>
+            <th>핸드폰번호</th>
+            <td>
+                <select name="inHphone1" class="inBorder">
+                    <option value="010">010
+                    <option value="016">061
+                    <option value="017">063
+                    <option value="018">063
+                    <option value="019">추가
+                </select>
+                <input type="text" size="5" name="inHphone2" class="inBorder" />-
+                <input type="text" size="5" name="inHphone3" class="inBorder" />
+             </td>
+        </tr>
+        <!-- 선택입력사항 타이틀 -->
+        <tr>
+            <td colspan="2" class="signSubTitle">
+                선택입력사항
+            </td>      
+        </tr>
+        <!-- 가입경로 -->
+         <tr>
+            <th>가입경로</th>
+            <td>
+                <select class="inBorder">
+                    <option value="0">== 가입동기 ==
+                    <option value="포탈사이트검색">포탈사이트검색
+                    <option value="블로그">블로그
+                    <option value="주위소개">주위소개                  
+                    <option value="etc">기타       
+                </select>
+             </td>
+        </tr>
+        <!-- 결혼여부 -->
+        <tr>
+            <th>결혼여부</th>
+            <td>
+                  <input type="radio" name="marriage" /> 미혼
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="marriage" /> 기혼              
+            </td>
+        </tr>
+        <!-- 직업 -->
+          <tr>
+            <th>직업</th>
+            <td>
+                <select name="inJob" class="inBorder">
+                    <option value="0">== 직업선택 ==
+                    <option value="학생">학생
+                    <option value="주부">주부
+                    <option value="프로그래머">프로그래머
+                    <option value="PC정비사">PC정비사
+                    <option value="none">없음
+                    <option value="서비스없">서비스업
+                    <option value="서비스없">제조업
+                   
+                </select>
+               
+             </td>
+        </tr>
+       
+       
+    </tbody>
+   
+    <!-- 버텀부 -->
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="등록" class="inBorder" />
+                <input type="reset" value="취소" class="inBorder"/>
+            </td>      
+        </tr>
+    </tfoot>
+</table>
+</form>
+     
+<body>
+</body>
+</html> 
